@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings
+
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -78,8 +80,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  Widget calcbutton(
-      String btntxt, Color btncolor, Color txtcolor, Padding btnpadding) {
+  Widget calcbutton(String btntxt, Color btncolor, Color txtcolor) {
     // Implementation of FilledButton is not provided, assuming it's a custom button.
     // Make sure you have it defined or replace it with a suitable button widget.
     return FilledButton(
@@ -87,6 +88,8 @@ class _HomeState extends State<Home> {
         calculation(btntxt);
       },
       style: ButtonStyle(
+        shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
         fixedSize: const MaterialStatePropertyAll(Size.fromRadius(45)),
         backgroundColor: MaterialStatePropertyAll(btncolor),
         padding: const MaterialStatePropertyAll(EdgeInsetsDirectional.all(20)),
@@ -109,184 +112,161 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Text(
-                        text,
-                        textAlign: TextAlign.left,
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 90),
-                      ),
-                    )
-                  ],
+              Align(
+                alignment: Alignment.bottomRight,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          text,
+                          textAlign: TextAlign.right,
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 90),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   calcbutton(
-                      'AC',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '+/-',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '%',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '/',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  calcbutton(
-                      '7',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '8',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '9',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      'X',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  calcbutton(
-                      '4',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '5',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '6',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '-',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  calcbutton(
-                      '1',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '2',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '3',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                  calcbutton(
-                      '+',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // ElevatedButton(
-                  //     onPressed: () {},
-                  //     style: const ButtonStyle(
-                  //       backgroundColor: MaterialStatePropertyAll(Colors.black),
-                  //       padding: MaterialStatePropertyAll(
-                  //         EdgeInsets.symmetric(horizontal: 85, vertical: 20),
-                  //       ),
-                  //     ),
-                  //     child: const Text(
-                  //       '0',
-                  //       style: TextStyle(fontSize: 35, color: Colors.white),
-                  //     )),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 50,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      borderRadius: BorderRadius.circular(
-                          100), // Adjust the radius as needed
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 2, // Adjust the border width as needed
-                      ),
-                    ),
-                    child: calcbutton(
-                        '0',
-                        Color.fromARGB(255, 0, 0, 0),
-                        const Color.fromARGB(255, 255, 255, 255),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 20))),
+                    'AC',
+                    const Color.fromARGB(255, 99, 141, 255),
+                    const Color.fromARGB(255, 255, 255, 255),
                   ),
-                  // calcbutton(
-                  //     '0',
-                  //     const Color.fromARGB(255, 91, 0, 0),
-                  //     const Color.fromARGB(255, 255, 255, 255),
-                  //     Padding(padding: EdgeInsets.symmetric(horizontal: 20))),
                   calcbutton(
-                      '.',
-                      const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
+                    '+/-',
+                    const Color.fromARGB(255, 99, 141, 255),
+                    const Color.fromARGB(255, 255, 255, 255),
+                  ),
                   calcbutton(
-                      '=',
-                      const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255),
-                      Padding(padding: EdgeInsets.all(0))),
+                    '%',
+                    const Color.fromARGB(255, 99, 141, 255),
+                    const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  calcbutton(
+                    '/',
+                    const Color.fromARGB(255, 50, 87, 188),
+                    const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcbutton(
+                    '7',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '8',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '9',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    'X',
+                    const Color.fromARGB(255, 50, 87, 188),
+                    const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcbutton(
+                    '4',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '5',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '6',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '-',
+                    const Color.fromARGB(255, 50, 87, 188),
+                    const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcbutton(
+                    '1',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '2',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '3',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '+',
+                    const Color.fromARGB(255, 50, 87, 188),
+                    const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcbutton(
+                    '0',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '00',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '.',
+                    const Color.fromARGB(255, 145, 142, 142),
+                    const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  calcbutton(
+                    '=',
+                    const Color.fromARGB(255, 50, 87, 188),
+                    const Color.fromARGB(255, 255, 255, 255),
+                  ),
                 ],
               ),
               const SizedBox(height: 10)
@@ -333,8 +313,9 @@ String div() {
 String doesContainDecimal(dynamic result) {
   if (result.toString().contains('.')) {
     List<String> splitDecimal = result.toString().split('.');
-    if (!(int.parse(splitDecimal[1]) > 0))
+    if (!(int.parse(splitDecimal[1]) > 0)) {
       return result = splitDecimal[0].toString();
+    }
   }
   return result;
 }
