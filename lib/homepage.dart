@@ -63,6 +63,11 @@ class _HomeState extends State<Home> {
           ? result = result.toString().substring(1)
           : result = '-' + result.toString();
       finalResult = result;
+    } else if (btnText == '0') {
+      if (result != '0') {
+        result = result + btnText;
+        finalResult = result;
+      }
     } else {
       result = result + btnText;
       finalResult = result;
@@ -73,7 +78,8 @@ class _HomeState extends State<Home> {
     });
   }
 
-  Widget calcbutton(String btntxt, Color btncolor, Color txtcolor) {
+  Widget calcbutton(
+      String btntxt, Color btncolor, Color txtcolor, Padding btnpadding) {
     // Implementation of FilledButton is not provided, assuming it's a custom button.
     // Make sure you have it defined or replace it with a suitable button widget.
     return FilledButton(
@@ -123,14 +129,26 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  calcbutton('AC', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('+/-', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('%', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('/', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
+                  calcbutton(
+                      'AC',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '+/-',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '%',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '/',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
                 ],
               ),
               const SizedBox(
@@ -139,14 +157,26 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  calcbutton('7', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('8', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('9', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('X', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
+                  calcbutton(
+                      '7',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '8',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '9',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      'X',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
                 ],
               ),
               const SizedBox(
@@ -155,14 +185,26 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  calcbutton('4', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('5', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('6', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('-', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
+                  calcbutton(
+                      '4',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '5',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '6',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '-',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
                 ],
               ),
               const SizedBox(
@@ -171,14 +213,26 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  calcbutton('1', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('2', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('3', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('+', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
+                  calcbutton(
+                      '1',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '2',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '3',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '+',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
                 ],
               ),
               const SizedBox(
@@ -187,22 +241,52 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
-                      onPressed: () {},
-                      style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(Colors.black),
-                        padding: MaterialStatePropertyAll(
-                          EdgeInsets.symmetric(horizontal: 85, vertical: 20),
-                        ),
+                  // ElevatedButton(
+                  //     onPressed: () {},
+                  //     style: const ButtonStyle(
+                  //       backgroundColor: MaterialStatePropertyAll(Colors.black),
+                  //       padding: MaterialStatePropertyAll(
+                  //         EdgeInsets.symmetric(horizontal: 85, vertical: 20),
+                  //       ),
+                  //     ),
+                  //     child: const Text(
+                  //       '0',
+                  //       style: TextStyle(fontSize: 35, color: Colors.white),
+                  //     )),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 50,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      borderRadius: BorderRadius.circular(
+                          100), // Adjust the radius as needed
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 2, // Adjust the border width as needed
                       ),
-                      child: const Text(
+                    ),
+                    child: calcbutton(
                         '0',
-                        style: TextStyle(fontSize: 35, color: Colors.white),
-                      )),
-                  calcbutton('.', const Color.fromARGB(255, 0, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
-                  calcbutton('=', const Color.fromARGB(255, 91, 0, 0),
-                      const Color.fromARGB(255, 255, 255, 255)),
+                        Color.fromARGB(255, 0, 0, 0),
+                        const Color.fromARGB(255, 255, 255, 255),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 20))),
+                  ),
+                  // calcbutton(
+                  //     '0',
+                  //     const Color.fromARGB(255, 91, 0, 0),
+                  //     const Color.fromARGB(255, 255, 255, 255),
+                  //     Padding(padding: EdgeInsets.symmetric(horizontal: 20))),
+                  calcbutton(
+                      '.',
+                      const Color.fromARGB(255, 0, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
+                  calcbutton(
+                      '=',
+                      const Color.fromARGB(255, 91, 0, 0),
+                      const Color.fromARGB(255, 255, 255, 255),
+                      Padding(padding: EdgeInsets.all(0))),
                 ],
               ),
               const SizedBox(height: 10)
