@@ -112,7 +112,7 @@ class _HomeState extends State<Home> {
       child: Text(
         btntxt,
         style: TextStyle(
-          fontSize: 30,
+          fontSize: 25,
           color: txtcolor,
         ),
       ),
