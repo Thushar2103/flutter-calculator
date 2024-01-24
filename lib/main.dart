@@ -105,14 +105,14 @@ class _HomeState extends State<Home> {
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
-        fixedSize: const MaterialStatePropertyAll(Size.fromRadius(45)),
+        fixedSize: const MaterialStatePropertyAll(Size.fromRadius(42)),
         backgroundColor: MaterialStatePropertyAll(btncolor),
         padding: const MaterialStatePropertyAll(EdgeInsetsDirectional.all(20)),
       ),
       child: Text(
         btntxt,
         style: TextStyle(
-          fontSize: 35,
+          fontSize: 30,
           color: txtcolor,
         ),
       ),
@@ -194,7 +194,7 @@ class _HomeState extends State<Home> {
                     const Color.fromARGB(255, 0, 0, 0),
                   ),
                   calcbutton(
-                    'X',
+                    'x',
                     const Color.fromARGB(255, 50, 87, 188),
                     const Color.fromARGB(255, 255, 255, 255),
                   ),
